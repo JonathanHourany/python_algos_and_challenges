@@ -11,6 +11,8 @@ def carry_over_addr(digit:int, carry_over:int)-> Tuple[int, int]:
     return n, carry_over
 
 def add_n(precision_array: List[int], n: int) -> List:
+    if len(precision_array) < 1:
+        raise ValueError(f"precision_array must contain at least one element, got {len(precision_array)}")
     reversed_precision_array = precision_array[::-1]
     addition_results = []
     carry_over = n
